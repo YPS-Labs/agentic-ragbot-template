@@ -1,0 +1,6 @@
+openai
+# google-generativeai
+python-dotenv
+pymongo
+sentence-transformers
+tavily-python
