@@ -1,0 +1,262 @@
+.contact-page {
+    min-height: calc(100vh - 80px);
+    /* Adjust for header/footer */
+    padding: 20px 20px;
+    background: #f8fafc;
+    color: #334155;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.contact-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.contact-header p {
+    font-size: 1.1rem;
+    color: #64748b;
+}
+
+/* Section Components */
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #6366f1;
+    display: inline-block;
+}
+
+/* NMIET Info Section (Top) */
+.nmiet-section {
+    background: white;
+    border-radius: 16px;
+    padding: 40px 50px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.nmiet-header {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.nmiet-header h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #6366f1;
+    margin-bottom: 5px;
+}
+
+.nmiet-address {
+    font-size: 1.1rem;
+    color: #475569;
+    font-style: italic;
+}
+
+.nmiet-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+}
+
+.detail-column {
+    text-align: left;
+    padding: 20px;
+    background: #f1f5f9;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.detail-column:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-color: #6366f1;
+    background: #ffffff;
+}
+
+.detail-column h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.detail-list {
+    list-style: none;
+    padding: 0;
+}
+
+.detail-list li {
+    margin-bottom: 12px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.detail-list li strong {
+    color: #334155;
+}
+
+/* Split Section (Developers & Form) */
+.split-section {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+    /* Default align-items is stretch, which makes columns equal height */
+}
+
+.split-column {
+    flex: 1;
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    /* Reduced padding */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Developers Column */
+.developers-column {
+    text-align: center;
+}
+
+.dev-contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dev-contact-item {
+    padding: 15px;
+    background: #f1f5f9;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    /* Changed from left border to full border for better centered look */
+    /* border-left: 4px solid #6366f1; Removed left border */
+}
+
+.dev-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dev-value {
+    font-size: 1.1rem;
+    color: #1e293b;
+    word-break: break-all;
+}
+
+/* Form Column */
+.form-column {
+    text-align: center;
+}
+
+.report-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Reduced gap */
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    /* Reduced gap */
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    /* Slightly smaller */
+    font-weight: 600;
+    color: #334155;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px 14px;
+    /* Reduced padding */
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    /* Slightly smaller */
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.submit-btn {
+    padding: 14px;
+    background: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.submit-btn:hover {
+    background: #4f46e5;
+}
+
+.submit-btn:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+}
+
+.form-status {
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.form-status.success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.form-status.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .nmiet-details-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .split-section {
+        flex-direction: column;
+    }
+}

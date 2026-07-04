@@ -1,0 +1,96 @@
+services:
+  # Backend Web Service
+  - type: web
+    name: agentic-rag-backend
+    runtime: docker
+    plan: free
+    region: oregon
+    branch: main
+    dockerfilePath: ./Dockerfile
+    dockerContext: ./
+    
+    # Health check endpoint
+    healthCheckPath: /health
+    
+    # Environment variables (set these in Render Dashboard)
+    envVars:
+      - key: NODE_ENV
+        value: production
+      
+      - key: PORT
+        value: 3000
+      
+      - key: MONGODB_URI
+        sync: false  # Set in dashboard
+      
+      - key: REDIS_HOST
+        sync: false  # Upstash Redis host
+      
+      - key: REDIS_PORT
+        value: 6379
+      
+      - key: REDIS_PASSWORD
+        sync: false  # Upstash Redis password
+      
+      - key: GPT_API_KEY
+        sync: false
+      
+      - key: GEMINI_API_KEY
+        sync: false
+      
+      - key: TAVILY_API_KEY
+        sync: false
+      
+      - key: JWT_SECRET
+        generateValue: true  # Auto-generate secure secret
+      
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      
+      - key: GOOGLE_CALLBACK_URL
+        sync: false  # Set to your Render URL
+      
+      - key: FRONTEND_URL
+        sync: false  # Set to your Vercel URL
+      
+      - key: ADMIN_EMAILS
+        sync: false  # Comma-separated admin emails
+      
+      - key: CACHE_TTL
+        value: 3600
+      
+      - key: CACHE_ENABLED
+        value: true
+      
+      - key: QUEUE_CONCURRENCY
+        value: 3
+      
+      - key: QUEUE_MAX_JOBS
+        value: 50
+      
+      - key: QUEUE_TIMEOUT
+        value: 35000
+      
+      - key: RATE_LIMIT_WINDOW_MS
+        value: 900000
+      
+      - key: RATE_LIMIT_MAX_REQUESTS
+        value: 50
+      
+      - key: LOG_LEVEL
+        value: info
+      
+      - key: PYTHON_PATH
+        value: python3
+    
+    # Disk storage for logs (optional)
+    disk:
+      name: logs
+      mountPath: /app/logs
+      sizeGB: 1
